@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee; http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>myWeb</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>MyOne</servlet-name>
+		<servlet-class>tommy.web.servlet.MyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyOne</servlet-name>
+		<url-pattern>/MyServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LifeCycle</servlet-name>
+		<servlet-class>tommy.web.sample.LifeCycle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LifeCycle</servlet-name>
+		<url-pattern>/LifeCycle</url-pattern>
+	</servlet-mapping>
+	
+	<!-- MyFirstServlet 예제 -->
+		<servlet>
+		<servlet-name>MyFirst</servlet-name>
+		<servlet-class>tommy.web.sample.MyFirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyFirst</servlet-name>
+		<url-pattern>/MyFirstServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- InitParam 예제 --> 
+	<context-param>
+		<param-name>company</param-name>
+		<param-value>KG ITBank</param-value>
+	</context-param>
+	<context-param>
+		<param-name>manager</param-name>
+		<param-value>Tommy. Lee</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>InitParam</servlet-name>
+		<servlet-class>tommy.web.sample.InitParam</servlet-class>
+		<init-param>
+			<param-name>tel</param-name>
+			<param-value>010-9531-0114</param-value>
+		</init-param>
+		<init-param>
+			<param-name>email</param-name>
+			<param-value>stdio@hanmail.net</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitParam</servlet-name>
+		<url-pattern>/InitParam</url-pattern>
+	</servlet-mapping>	
+	
+	<!-- 방명록만들기 예제 -->
+	<servlet>
+		<servlet-name>VisitInsert</servlet-name>
+		<servlet-class>tommy.web.bbs.VisitInsert</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VisitInsert</servlet-name>
+		<url-pattern>/VisitInsert</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>VisitList</servlet-name>
+		<servlet-class>tommy.web.bbs.VisitList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VisitList</servlet-name>
+		<url-pattern>/VisitList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 로그인/로그아웃 예제 -->
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>tommy.web.login.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LoginCheck</servlet-name>
+		<servlet-class>tommy.web.login.LoginCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginCheck</servlet-name>
+		<url-pattern>/LoginCheck</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>tommy.web.login.Logout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 제 7 강 JSP에서 데이터베이스 연동하기 15페이지 -->
+	<!-- WAS에서 제공하는 Connection Pool 이용하기 예제 -->
+	<resource-ref>
+	<description>ConnectionPool</description>
+	<res-ref-name>jdbc/myOracle</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+	</resource-ref>
+	
+	
+	<!-- 제 4 강 JSP 지시어와 에러처리 7페이지~ -->
+	<!-- 에러코드별 에러페이지 지정방법 예제 -->
+	<error-page>
+	<error-code>404</error-code>
+	<location>/error/error404.jsp</location>
+	</error-page>
+	<!-- 
+	<error-page>
+	<error-code>500</error-code>
+	<location>/error/error500.jsp</location>
+	</error-page>
+	-->
+	 
+	<!-- 예외종류별 에러페이지 지정하기 예제 -->
+	<error-page>
+	<exception-type>java.lang.NullPointerException</exception-type>
+	<location>/error/errorNullPointer.jsp</location>
+	</error-page>
+	
+	
+	
+</web-app>
