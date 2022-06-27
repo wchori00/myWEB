@@ -156,6 +156,6 @@ function updateCheck() {
 		return;
 	}
 	document.regForm.submit();
+	
 }
-
 	
