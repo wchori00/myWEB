@@ -47,6 +47,7 @@
 <input type="button" value="회원가입" onClick="javascript:window.location='regForm.jsp'"/>
 </td>
 </tr>
+
 </table>
 </form>
 <%} %>
