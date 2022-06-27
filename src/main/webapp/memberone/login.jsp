@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Log in</title>
 <link href="style.css" type="text/css" rel="stylesheet"/>
+<!-- <script language="javascript" src="script.js"></script> -->
 </head>
 <body>
 <% if(loginID != null) { %>
@@ -25,7 +26,7 @@
 </tr>
 </table>
 <%}else { %>
-<form method="post" action="loginProc.jsp">
+<form method="post" action="loginProc.jsp"><!-- onsubmit="checkvalue()" name="loginForm" 추가하고 메서드 만들기 -->
 <table width="300" border="1">
 <tr>
 <td colspan="2" align="center">회원 로그인</td>
