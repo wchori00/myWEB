@@ -49,12 +49,12 @@ number = count; // 수정<4>
 <%	}else { %>
 <table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
 <tr height="30" bgcolor="<%= value_c %>">
-<td align="center" width="50">번  호</td>
-<td align="center" width="250">제    목</td>
-<td align="center" width="100">작성자</td>
-<td align="center" width="150">작성일</td>
-<td align="center" width="50">조  회</td>
-<td aligh="center" width="100">IP</td>
+<th align="center" width="50">번  호</th>
+<th align="center" width="250">제    목</th>
+<th align="center" width="100">작성자</th>
+<th align="center" width="150">작성일</th>
+<th align="center" width="50">조  회</th>
+<th aligh="center" width="100">IP</th>
 </tr>
 <%
 	for(int i = 0; i < articleList.size(); i++) {
