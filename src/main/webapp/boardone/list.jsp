@@ -13,9 +13,9 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 %>
 <%
 // 수정<2>
-String pageNum = request.getParameter("pageNum");
-if(pageNum == null) {
-	pageNum = "1";
+String pageNum = request.getParameter("pageNum"); // pageNum 최초 선언
+if(pageNum == null) {		// 처음에 값이 없으니 null
+	pageNum = "1";			// 1번으로 설정
 }
 int currentPage = Integer.parseInt(pageNum);
 int startRow = (currentPage - 1) * pageSize + 1;
