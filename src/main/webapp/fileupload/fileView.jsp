@@ -4,6 +4,7 @@
 				com.oreilly.servlet.multipart.DefaultFileRenamePolicy,
 				java.util.*, java.io.*"
 %>
+
 <%
 String realFolder="";
 String saveFolder="upload";
