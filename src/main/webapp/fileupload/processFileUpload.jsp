@@ -68,7 +68,9 @@ if(FileUpload.isMultipartContent(request)) {
 	}
 }else {
 %>
+
 	인코딩 타입이 multipart/form-data가 아님
+
 <%
 }
 %>
