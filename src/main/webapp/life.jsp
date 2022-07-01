@@ -8,11 +8,7 @@
 	public void jspDestroy() { // 메소드 재정의
 		System.out.println("jspDestroy() 호출됨");
 	}
-
 %>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +22,9 @@
 	numTwo++;	// 새로고침 할때마다 초기화
 	System.out.println(session.getId());
 %>
-
 <ul>
 <li>Number One: <%=numOne %></li>
 <li>Number Two: <%=numTwo %></li>
 </ul>
-
 </body>
 </html>
