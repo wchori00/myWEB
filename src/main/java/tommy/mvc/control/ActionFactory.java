@@ -18,6 +18,11 @@ public class ActionFactory {
 		Action action = null;
 		if(cmd.equals("index")) {
 			action = new IndexAction();
+		/*
+		else if(cmd.equals("list"){
+		    action = new ListAction();
+		}
+		*/
 		}
 		return action;
 	}
