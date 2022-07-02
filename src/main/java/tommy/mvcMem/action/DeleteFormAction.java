@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tommy.mvcMem.control.ActionForward;
 
-public class IndexAction implements Action {
+public class DeleteFormAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		return new ActionForward("/mvcMem/index.jsp", false);
+		return new ActionForward("/mvcMem/deleteForm.jsp", false);
 	}
 }

@@ -3,11 +3,14 @@ package tommy.mvcMem.action;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import tommy.mvcMem.control.ActionForward;
 
-public class IndexAction implements Action {
+public class LogoutAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		return new ActionForward("/mvcMem/index.jsp", false);
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return new ActionForward("/mvcMem/logout.jsp", false);
 	}
 }
