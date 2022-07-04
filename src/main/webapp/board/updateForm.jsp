@@ -22,6 +22,11 @@
 <input type="hidden" name="num" value="${article.num}"></td>
 </tr>
 <tr>
+<td width="70" bgcolor="${value_c}" align="center">제  목</td>
+<td align="left" width="330">
+<input type="text" size="40" maxlength="50" name="subject" value="${article.subject}"></td>
+</tr>
+<tr>
 <td width="70" bgcolor="${value_c}" align="center">Email</td>
 <td align="left" width="330">
 <input type="text" size="40" maxlength="30" name="email" value="${article.email}"></td>

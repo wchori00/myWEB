@@ -12,7 +12,7 @@
 <body bgcolor="${bodyback_c}">
 <center><b>글내용 보기</b>
 <br>
-<form>
+<form >
 <table width="500" border="1" cellspacing="0" cellpadding="0" align="center">
 <tr height="30">
 <td align="center" width="125" bgcolor="${value_c}">글번호</td>

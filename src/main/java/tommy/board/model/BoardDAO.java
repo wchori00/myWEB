@@ -213,8 +213,77 @@ public class BoardDAO {
 		return article;
 	}
 	
-//	public int updateArticle(BoardVO article) {
-//		Connection conn = null;
-//	}
+	public int updateArticle(BoardVO article) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbpasswd = "";
+		String sql = "";
+		int result = -1; // 결과값
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select pass from board where num=?");
+			pstmt.setInt(1, article.getNum());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dbpasswd = rs.getString("pass"); // 비밀번호 비교
+				if(dbpasswd.equals(article.getPass())) {
+					sql = "update board set writer=?, email=?, subject=?";
+					sql += ",content=? where num=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1,  article.getWriter());
+					pstmt.setString(2, article.getEmail());
+					pstmt.setString(3,  article.getSubject());
+					pstmt.setString(4, article.getContent());
+					pstmt.setInt(5, article.getNum());
+					pstmt.executeUpdate();
+					result = 1; // 수정성공
+				}else {
+					result = 0; // 수정실패
+				}
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			if(rs != null) try {rs.close();}catch(SQLException ex) {}
+			if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
+			if(conn != null) try {conn.close();} catch(SQLException ex) {}
+		}
+		return result;
+	}
+	
+	public int deleteArticle(int num, String pass) {
+		System.out.println(pass);
+		System.out.println(num);
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbPass = "";
+		int result = -1;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select pass from board where num=?");
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dbPass = rs.getString("pass");
+				if(dbPass.equals(pass)) {
+					pstmt = conn.prepareStatement("delete from board where num=?");
+					pstmt.setInt(1,  num);
+					pstmt.executeUpdate();
+					result = 1; // 글삭제 성공
+					
+				}else
+					result = 0; // 비밀번호 틀림
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			if(rs != null) try {rs.close();}catch(SQLException ex) {}
+			if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
+			if(conn != null) try {conn.close();} catch(SQLException ex) {}
+		}
+		return result;
+	}
 	
 }
