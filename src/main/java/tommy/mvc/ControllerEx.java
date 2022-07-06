@@ -21,9 +21,9 @@ public class ControllerEx extends HttpServlet {
      private Map<String, Object> commandMap = new HashMap<String, Object>();   //지역변수 키값은 문자열로, 밸류는 객체로 저장
      //명령어와 처리클래스가 매핑되어 있는 properties파일을 읽어서 Map객체인 commandMap에 저장
      //명령어와 처리클래스가 매핑되어 있는 properties파일은 Command.properties 파일
-     @SuppressWarnings("unchecked") //부적잘한 컴파일러의 경고를 제거하기 위해 사용됨
+     @SuppressWarnings("unchecked") //부적절한 컴파일러의 경고를 제거하기 위해 사용됨
      public void init(ServletConfig config) throws ServletException{   
-    //web.xml에서 propertyConfig에 해당하는 init-param의 값을 읽어 옴
+	 //web.xml에서 propertyConfig에 해당하는 init-param의 값을 읽어 옴
      String props = config.getInitParameter("propertyConfig"); //web.xml에서 properties를 받아오라는 거(Command.properties) 
      //명령어와 처리클래스의 매핑정보를 저장할 Properties객체 생성
      Properties pr = new Properties(); // Properties는 키값과 value가 String 으로 되어있는 특수한 맵이다.
