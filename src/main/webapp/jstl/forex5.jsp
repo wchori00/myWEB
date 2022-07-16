@@ -8,7 +8,7 @@
 <title>JSTL core 예제 - forTokens</title>
 </head>
 <body>
-<c:forTokens var="car" items="Sprinter Trueno AE86,RX-7 Savanna FC3S,Lancer Evolution III,RX-7 Efini FD3S" delims=",">
+<c:forTokens var="car" items="Porsche 911 Turbo S Cabriolet,Mercedes-AMG SL 63,Rolls-Royce Cullinan,Mercedes-AMG G 63" delims=",">
 자동차 이름: <c:out value="${car}"/><br>
 </c:forTokens>
 </body>

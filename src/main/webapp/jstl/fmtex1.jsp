@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- <fmt:setLocale value="en"/> --%>
+<%-- <fmt:setLocale value="en"/> --%>	<!-- 주석 풀면 영어로 출력 -->
 <fmt:bundle basename="tommy.web.bundle.testBundle">
 <fmt:message key="TITLE" var="title"/>
 <!DOCTYPE html>
