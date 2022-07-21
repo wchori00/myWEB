@@ -152,7 +152,7 @@
 	</jsp-config>
 	
 	<!-- 제 17 강 모델2 패턴.pdf -->
-	<!-- 
+	<!--	-->	
 	<servlet>
 		<servlet-name>controlOne</servlet-name>
 		<servlet-class>tommy.mvc.control.ControlServlet</servlet-class>
@@ -161,7 +161,6 @@
 		<servlet-name>controlOne</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-
 	
 	<servlet>
 		<servlet-name>myControl</servlet-name>
@@ -171,12 +170,12 @@
 		<servlet-name>myControl</servlet-name>
 		<url-pattern>*.mdo</url-pattern>
 	</servlet-mapping>
-	 -->	
+
 
 
 	<!-- 제 17 강 모델2 패턴.pdf 6페이지 -->
 	<!-- 요청 URI 자체를 명령어로 사용하는 방법 -->
-	<!-- 
+	<!--
 	<servlet>
 		<servlet-name>ControllerURI</servlet-name>
 		<servlet-class>tommy.mvc.Controller</servlet-class>
@@ -189,9 +188,10 @@
 		<servlet-name>ControllerURI</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>	
-	 -->
+	-->
 	
 	<!-- 제 19 강 모델2로 만드는 게시판 I.pdf -->
+	<!-- 
 	<servlet>
 	<servlet-name>Controller</servlet-name>
 	<servlet-class>tommy.board.controller.ControllerAction</servlet-class>
@@ -204,7 +204,7 @@
 	<servlet-name>Controller</servlet-name>
 	<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	
+	 -->
 	
 	
 	
