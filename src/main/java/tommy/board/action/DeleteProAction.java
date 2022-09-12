@@ -17,5 +17,4 @@ public class DeleteProAction implements CommandAction { // 글삭제
 		request.setAttribute("check", new Integer(check));
 		return "/board/deletePro.jsp"; // 해당뷰
 	}
-
 }

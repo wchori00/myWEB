@@ -16,5 +16,4 @@ public class UpdateFormAction implements CommandAction {
 		request.setAttribute("article", article);
 		return "/board/updateForm.jsp"; // ÇØ´çºä
 	}
-
 }
